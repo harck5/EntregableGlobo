@@ -12,7 +12,7 @@ public class MoveLeftX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerControllerX>();
+        playerControllerScript = FindObjectOfType<PlayerControllerX>();
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class MoveLeftX : MonoBehaviour
         }
 
         // If object goes off screen that is NOT the background, destroy it
-        if (transform.position.x < leftBound && !gameObject.CompareTag("Obstacle"))
+        if (transform.position.x < leftBound && !gameObject.CompareTag("Background"))
         {
             Destroy(gameObject);
         }

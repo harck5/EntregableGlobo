@@ -17,14 +17,14 @@ public class SpawnManagerX : MonoBehaviour
     }
     private void Update()
     {
-        InvokeRepeating("PrawnsObject", spawnDelay, spawnInterval);
+        InvokeRepeating("SpawnsObject", spawnDelay, spawnInterval);
     }
     // Spawn obstacles
     private void SpawnObjects()
     {
 
         // Set random spawn location and random object index
-        Vector3 spawnLocation = new Vector3(30, Random.Range(5, 15), 0);
+        Vector3 spawnLocation = new Vector3(30, Random.Range(0, 15), 0);
         int index = Random.Range(0, objectPrefabs.Length);
 
         // If game is still active, spawn new object
