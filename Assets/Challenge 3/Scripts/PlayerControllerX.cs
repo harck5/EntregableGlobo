@@ -6,7 +6,7 @@ public class PlayerControllerX : MonoBehaviour
 {
     public bool gameOver;
 
-    private float floatForce = 15;
+    private float floatForce = 20f;
     private float gravityModifier = 1.5f;
     private Rigidbody playerRb;
 
@@ -16,6 +16,7 @@ public class PlayerControllerX : MonoBehaviour
     private AudioSource playerAudio;
     public AudioClip moneySound;
     public AudioClip explodeSound;
+    public int counter;
 
 
     // Start is called before the first frame update
@@ -60,6 +61,8 @@ public class PlayerControllerX : MonoBehaviour
             fireworksParticle.Play();
             playerAudio.PlayOneShot(moneySound, 1.0f);
             Destroy(other.gameObject);
+            counter++;
+            Debug.Log(message:$"You have {counter} coins");
 
         }
 
